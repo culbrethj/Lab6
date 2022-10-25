@@ -1,4 +1,4 @@
-# composes a string with each digit increased by 3. 7-9 would result in two-digit numbers so they restart at 0
+# composes a string with each digit increased by 3. 7-9 would result in two-digit numbers, so they restart at 0
 def encode(pw):
     p_enc = ""
     for char in pw:
@@ -7,8 +7,10 @@ def encode(pw):
 
 
 def decode(pw):
-    pass
-
+    p_dec = ""
+    for char in pw:
+        p_dec += str(int(char) - 3 if int(char) >= 3 else int(char) + 7)
+    return p_dec
 
 if __name__ == "__main__":
     while True:
